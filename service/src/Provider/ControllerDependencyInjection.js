@@ -1,7 +1,8 @@
-const UserControllerFactory = require('../Controller/UserController');
+const CardControllerFactory = require('../Controller/CardController');
+const { CardService } = require('./ProvidersDepencyInjection');
 
-const UserController = UserControllerFactory();
+const CardController = CardControllerFactory(CardService);
 
 module.exports = {
-  UserController
+  CardController,
 };

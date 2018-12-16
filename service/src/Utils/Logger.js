@@ -6,12 +6,12 @@ log4js.configure({
   appenders: {
     default: {
       type: 'console',
-      layout: {type: 'basic'},
+      layout: { type: 'basic' },
     },
   },
   categories: {
-    default: {appenders: ['default'], level: 'debug'},
-    'manager-service': {appenders: ['default'], level: 'debug'},
+    default: { appenders: ['default'], level: 'debug' },
+    'manager-service': { appenders: ['default'], level: 'debug' },
   },
   replaceConsole: true,
 });
@@ -32,8 +32,8 @@ const mapTextAndObject = (text, object) =>
  * @param {String} method
  * @returns {function(text: String, object: Object): String}
  */
-const getLogText =
-  method => (text, object) => configuredLogs[method](mapTextAndObject(text, object));
+const getLogText = method =>
+  (text, object) => configuredLogs[method](mapTextAndObject(text, object));
 
 const logger = {
   trace: getLogText('trace'),
