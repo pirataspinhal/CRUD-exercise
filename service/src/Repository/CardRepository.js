@@ -7,7 +7,7 @@ const CommunicationError = require('../Error/CommunicationError');
  */
 
 /**
- * @param cardModel
+ * @param {CardModel} cardModel
  * @constructor
  */
 function CardRepository(cardModel) {

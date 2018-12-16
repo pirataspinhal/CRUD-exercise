@@ -7,16 +7,18 @@ const logger = require('../Utils/Logger');
 /**
  *
  * @param {CardRepository} cardRepository
+ * @param {IdRepository} idRepository
  * @returns {CardService}
  */
-function CardService(cardRepository) {
+function CardService(cardRepository, idRepository) {
   return {
     /**
-     * @param {Object} cardInfo
+     * @param {CardObject} cardInfo
      * @returns {Promise<Object>}
      */
-    createCard(cardInfo) {
+    async createCard(cardInfo) {
       logger.trace('Entered CardService::createCard', cardInfo);
+      cardInfo.id = await idRepository.getId('card', cardInfo);
       return cardRepository.createCard(cardInfo)
         .then((savedDoc) => {
           logger.debug('CardService::createCard saved card');

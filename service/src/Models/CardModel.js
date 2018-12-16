@@ -5,7 +5,7 @@
 
 /**
  * @typedef {Object} CardObject
- * @property {String} id
+ * @property {String} [id]
  * @property {String} name
  * @property {String} imageUrl
  * @property {String} cardType
