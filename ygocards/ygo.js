@@ -220,22 +220,24 @@ function mergeFiles() {
         const element = locks.files[keys[index]];
         // If the promise finished and it was not yet written, copy file to fileName
         if(element.completed == true && element.write == false) {
-            if(locks.count == 0)
-                fs.writeFileSync(fileName, "[");
-
             element.write = true;
-            locks.count = locks.count + 1;
 
             // Check if total is 0, unlink the file and step over
+            // Also, set the max number of actual char to minus one
             if(element.total == 0) {
                 fs.unlinkSync(keys[index].concat(".json"));
+                locks.length--;
                 continue;
             }
             
-            // Otherwise, copy the data to the final file
-            if(locks.count > 1)
+            if(locks.count == 0)
+                fs.writeFileSync(fileName, "[");
+            else
                 fs.appendFileSync(fileName, ",");
+
+            locks.count = locks.count + 1;
             
+            // Copy the data to the final file
             let data = fs.readFileSync(keys[index].concat(".json"));
             fs.appendFileSync(fileName, data);
             fs.unlinkSync(keys[index].concat(".json"));
