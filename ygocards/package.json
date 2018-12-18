@@ -1,0 +1,29 @@
+{
+  "name": "ygocards",
+  "version": "1.0.0",
+  "description": "Fetch yugioh cards from wiki",
+  "main": "ygo.js",
+  "scripts": {
+    "start": "node ygo.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pirataspinhal/CRUD-exercise.git"
+  },
+  "keywords": [
+    "yugioh",
+    "crawler",
+    "wiki"
+  ],
+  "author": "Gustavo Ceccon",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/pirataspinhal/CRUD-exercise/issues"
+  },
+  "homepage": "https://github.com/pirataspinhal/CRUD-exercise#readme",
+  "dependencies": {
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
+    "sprintf-js": "^1.1.2"
+  }
+}
