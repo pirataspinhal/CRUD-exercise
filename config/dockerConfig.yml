@@ -11,10 +11,13 @@ services:
     command: nodemon -L app.js
     volumes:
       - ../service:/usr/src/app
+    depends_on:
+      - mongo-database
 
   mongo-database:
       image: mongo:latest
       volumes:
         - ../databases/mongodb:/data/db
+        - ../scripts:/scripts
       ports:
         - "27017:27017"

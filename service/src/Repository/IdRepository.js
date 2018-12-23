@@ -26,7 +26,7 @@ function CardRepository(idModel) {
           return data.id.toString();
         }
         const idDoc = await idModel.findOneAndUpdate({ type }, { $inc: { lastId: 1 } });
-        return hashids.encode(idDoc.lastId);
+        return hashids.encode(parseInt(idDoc.lastId, 10));
       } catch (error) {
         logger.error('CardRepository::createCard error trying to save card doc.', error);
         throw new CommunicationError(`Error trying to save card doc. Error: ${error}`);

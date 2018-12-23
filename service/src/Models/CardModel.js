@@ -24,6 +24,8 @@ function CardModel(mongoose) {
     imageUrl: { type: String, default: '' },
     cardType: { type: String, default: '' },
     type: { type: String, default: '' },
+    lore: { type: String, default: ''},
+    properties: { type: Array, default: [] },
   }, {
     versionKey: false,
     timestamps: true,
