@@ -16,18 +16,17 @@ function CardController(cardService) {
      */
     createCardAction({ body }, res) {
       logger.trace('Entered CardController::createCardAction', body);
-      try {
-        return cardService.createCard(body)
-          .then((cardInfo) => {
-            logger.debug('CardController::createCardAction successfully created', { id: cardInfo.id });
-            return res.status(200)
-              .json({ message: 'Card created', responseObject: { cardId: cardInfo.id } });
-          });
-      } catch (error) {
-        logger.error('CardController::createCardAction error', { message: error.message });
-        return res.status(500)
-          .json({ message: 'Error creating card', error: error.message });
-      }
+      return cardService.createCard(body)
+        .then((cardInfo) => {
+          logger.debug('CardController::createCardAction successfully created', { id: cardInfo.id });
+          return res.status(200)
+            .json({ message: 'Card created', responseObject: { cardId: cardInfo.id } });
+        })
+        .catch((error) => {
+          logger.error('CardController::createCardAction error', { message: error.message });
+          return res.status(500)
+            .json({ message: 'Error creating card', error: error.message });
+        });
     },
   };
 }

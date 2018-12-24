@@ -8,7 +8,7 @@
   "rules": {
     "no-var": "error",
     "no-param-reassign": ["error", { "props": false }],
-
+    "no-underscore-dangle": ["error", { "allow": ["_getData"] }],
     "complexity": [ 1, 5 ]
   }
 }
