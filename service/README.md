@@ -26,15 +26,15 @@ In this section we will explain all the code structure and decisions. This is a 
 Here we store our config files
 
 ### **src**
-This is folder is responsable for holding the source code to the server. I took the approach of dividing the core logic of the server on three layers (Controller, Service, Repository), that i will explain below with the other files/folders. \
+This folder is responsable for holding the source code to the server. I took the approach of dividing the core logic of the server on three layers (Controller, Service, Repository), that i will explain below with the other files/folders. \
 \
 Another thing to note is that we are using depency injection on our server. We made this choice so we could have more control over our application and make the testing an easyer process.
 
 - #### Controller (layer 1)
-    -   This folder contains all the logic that is reponsable for handling requests, both to receive and reply to them. He is also responsable to make field validations and pass the data to *Service* formated in a way that node will understand.
+    -   This folder contains all the logic that is reponsable for handling requests, both to receive and reply to them. He is also responsable to make field validations and pass the data to *Service* formated in a way that *node.js* will understand.
 
 - #### Service (layer 2)
-    -   Here we have all the bussiness logic of our server. Here we have stored the codes that represent the core of the functionality.
+    -   Here we have all the bussiness logic of our server, the codes that represent the core of the functionality.
 
 - #### Repository (layer 3)
     -   This section of our structure holds the code that is reponsable for talking with exterior data, such as databases or another microservice or source of information.
