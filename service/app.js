@@ -9,13 +9,13 @@ const logger = require('./src/Utils/Logger');
 const corsMiddleware = require('./src/Middleware/CorsMiddleware');
 
 function serveMongo() {
-  const {serverUri, options} = config.mongo;
+  const { serverUri, options } = config.mongo;
   mongoose.connect(serverUri, options);
   mongoose.Promise = global.Promise;
 
   const db = mongoose.connection;
   db.on('error', () => logger.error('Error trying to connect to mongo'));
-  db.once('open', () => logger.info('Manager Service connected to the DB'))
+  db.once('open', () => logger.info('Manager Service connected to the DB'));
 }
 
 function serverSetup(port) {

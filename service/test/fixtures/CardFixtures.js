@@ -19,6 +19,26 @@ CardFixtures.requestBodyWithoutId = {
   properties: ['Rare', 'Special'],
 };
 
+CardFixtures.cardWithIdInteger = {
+  id: 12345,
+  name: 'TRUCO LADRÂO',
+  imageUrl: 'imagem.de.teste.com',
+  cardType: 'Monster',
+  type: 'Neutral',
+  lore: 'Monstro criado a partir de uma partida de truco muito louca entre uma galera no bar',
+  properties: ['Rare', 'Special'],
+};
+
+CardFixtures.cardWithIdAsString = {
+  id: '12345',
+  name: 'TRUCO LADRÂO',
+  imageUrl: 'imagem.de.teste.com',
+  cardType: 'Monster',
+  type: 'Neutral',
+  lore: 'Monstro criado a partir de uma partida de truco muito louca entre uma galera no bar',
+  properties: ['Rare', 'Special'],
+};
+
 CardFixtures.defaultCard = {
   createdAt: new Date('2018-10-10'),
   updatedAt: new Date('2018-10-10'),
